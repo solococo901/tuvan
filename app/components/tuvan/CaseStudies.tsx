@@ -1,179 +1,143 @@
 "use client";
-import { useState, useEffect } from "react"; // Thêm useEffect
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 
 const cases = [
   {
     id: "01",
-    name: "Signature Residence",
-    location: "Quận 1, TP. HCM",
+    name: "Cityhouse Kim Nguyên",
+    location: "Phú Nhuận, TP. HCM",
     stats: [
-      { label: "Doanh thu", value: "+22%" },
-      { label: "Lấp đầy", value: "100%" }
+      { label: "Diện tích sàn", value: "2500 m²" },
+      { label: "Số phòng", value: "54 phòng" }
     ],
     before: "/images/bellita.png",
     after: "/images/bellita2.png",
-    desc: "Cải tạo từ tòa nhà văn phòng xuống cấp thành tổ hợp căn hộ dịch vụ cao cấp."
+    desc: "Dự án xây mới hướng đến nhóm khách hàng business cấp trung"
   },
   {
     id: "02",
-    name: "Savvy Lifestyle",
+    name: "CityHouse CityOasis",
     location: "Quận 3, TP. HCM",
     stats: [
-      { label: "ROI", value: "18%" },
-      { label: "Vận hành", value: "Proptech" }
+      { label: "Diện tích sàn", value: "1200 m²" },
+      { label: "Số phòng", value: "27 phòng" }
     ],
     before: "https://images.unsplash.com/photo-1512918766671-ed6a07be061f?q=80&w=2070",
     after: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069",
-    desc: "Tối ưu hóa công năng nhà phố diện tích lớn thành mô hình Co-living hiện đại."
+    desc: "Dự án cải tạo hướng đến nhóm khách hàng du lịch  cấp trung"
   },
   {
     id: "03",
-    name: "CityHouse Park View",
-    location: "Phú Nhuận, TP. HCM",
+    name: "CityHouse Atelier",
+    location: "Quận 2, TP. HCM",
     stats: [
-      { label: "Doanh thu", value: "+15%" },
-      { label: "Thanh khoản", value: "Cao" }
+      { label: "Diện tích sàn", value: "3200 m²" },
+      { label: "Số phòng", value: "45 phòng" }
     ],
     before: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000",
     after: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000",
-    desc: "Định vị lại phân khúc khách hàng thượng lưu cho tòa nhà căn hộ dịch vụ cũ."
+    desc: "Dự án tiếp quản vận hành hướng đến nhóm khách hàng business cao cấp"
   },
   {
     id: "04",
-    name: "CityHouse Park View",
-    location: "Phú Nhuận, TP. HCM",
+    name: "CityHouse Elpino",
+    location: "Quận 1, TP. HCM",
     stats: [
-      { label: "Doanh thu", value: "+15%" },
-      { label: "Thanh khoản", value: "Cao" }
+      { label: "Diện tích sàn", value: "1800 m²" },
+      { label: "Số phòng", value: "37 phòng" }
     ],
     before: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000",
     after: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000",
-    desc: "Định vị lại phân khúc khách hàng thượng lưu cho tòa nhà căn hộ dịch vụ cũ."
-  },
-  {
-    id: "05",
-    name: "CityHouse Park View",
-    location: "Phú Nhuận, TP. HCM",
-    stats: [
-      { label: "Doanh thu", value: "+15%" },
-      { label: "Thanh khoản", value: "Cao" }
-    ],
-    before: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000",
-    after: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000",
-    desc: "Định vị lại phân khúc khách hàng thượng lưu cho tòa nhà căn hộ dịch vụ cũ."
-  },
-  {
-    id: "06",
-    name: "CityHouse Park View",
-    location: "Phú Nhuận, TP. HCM",
-    stats: [
-      { label: "Doanh thu", value: "+15%" },
-      { label: "Thanh khoản", value: "Cao" }
-    ],
-    before: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000",
-    after: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000",
-    desc: "Định vị lại phân khúc khách hàng thượng lưu cho tòa nhà căn hộ dịch vụ cũ."
+    desc: "Dự án setup vận hành hướng đến nhóm khách hàng du lịch cao cấp "
   }
 ];
 
 export default function CaseStudies() {
   const [activeCase, setActiveCase] = useState(0);
-  const [mounted, setMounted] = useState(false); // Trạng thái kiểm soát mounted
-
-  // Khởi tạo mounted sau khi render lần đầu
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Nếu chưa mounted, trả về khung xương (hoặc null) để tránh mismatch style
-  if (!mounted) {
-    return <section className="w-full bg-[#0F1A41] min-h-screen" />;
-  }
 
   return (
-    <section className="relative w-full bg-[#0F1A41] text-white py-24 px-6 md:px-16 overflow-hidden">
+    <section className="relative w-full bg-white text-[#0F1A41] py-24 px-6 md:px-16 overflow-hidden">
+      
       <style jsx>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
       {/* Header Section */}
-      <div className="container mx-auto mb-20">
+      <div className="container mx-auto mb-12 md:mb-20">
         <div className="grid grid-cols-1 md:grid-cols-12 items-end gap-8">
           <div className="md:col-span-8">
-            <span className="text-[10px] tracking-[0.5em] uppercase text-blue-400 font-bold mb-4 block">Portfolios</span>
-            <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none">
-              Sự chuyển hóa <br /> <span className="font-light italic opacity-50 text-blue-200">Giá trị.</span>
+            <span className="text-[10px] tracking-[0.5em] uppercase text-blue-600 font-bold mb-4 block">Portfolios</span>
+            <h2 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter leading-none text-[#0F1A41]">
+              Sự chuyển hóa <br /> <span className="font-light italic opacity-30">Giá trị.</span>
             </h2>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-white/10 pt-12">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-slate-200 pt-12">
         
-        {/* LEFT: Project Navigation */}
-        <div className="lg:col-span-3 order-2 lg:order-1">
-          <p className="text-[10px] tracking-widest uppercase opacity-40 mb-8 font-bold text-blue-400">
+        {/* LEFT/TOP: Project Navigation */}
+        {/* Mobile: order-1 (dưới title), Desktop: order-1 (bên trái) */}
+        <div className="lg:col-span-3 order-1">
+          <p className="text-[10px] tracking-widest uppercase opacity-60 mb-6 font-bold text-blue-600">
             Danh sách dự án ({cases.length})
           </p>
           
-          <div className="no-scrollbar overflow-y-auto max-h-[600px] pr-2 space-y-4">
+          <div className="no-scrollbar overflow-x-auto lg:overflow-y-auto flex lg:flex-col gap-4 max-h-none lg:max-h-[600px] pr-2 pb-4 lg:pb-0">
             {cases.map((project, index) => (
               <motion.button
                 key={`${project.id}-${index}`}
                 onClick={() => setActiveCase(index)}
                 initial={false}
                 animate={{ 
-                  backgroundColor: activeCase === index ? "rgba(255, 255, 255, 0.05)" : "rgba(255, 255, 255, 0)",
-                  borderColor: activeCase === index ? "#60a5fa" : "rgba(255, 255, 255, 0.05)"
+                  backgroundColor: activeCase === index ? "rgba(37, 99, 235, 0.05)" : "rgba(255, 255, 255, 0)",
+                  borderColor: activeCase === index ? "#2563eb" : "rgba(0, 0, 0, 0.05)"
                 }}
-                className="w-full text-left p-6 transition-all border block group"
+                className="min-w-[200px] lg:min-w-full text-left p-5 transition-all border block group relative"
               >
-                <span className={`text-[10px] font-mono block mb-2 transition-opacity duration-300 ${activeCase === index ? "opacity-100 text-blue-400" : "opacity-40"}`}>
+                <span className={`text-[10px] font-mono block mb-1 transition-opacity duration-300 ${activeCase === index ? "opacity-100 text-blue-600" : "opacity-40"}`}>
                   [{project.id}]
                 </span>
-                <h4 className={`text-sm uppercase font-bold tracking-wider transition-colors duration-300 ${activeCase === index ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
+                <h4 className={`text-xs md:text-sm uppercase font-bold tracking-wider transition-colors duration-300 ${activeCase === index ? "text-[#0F1A41]" : "text-slate-400 group-hover:text-slate-600"}`}>
                   {project.name}
                 </h4>
+                {activeCase === index && (
+                    <motion.div layoutId="activeLine" className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 hidden lg:block" />
+                )}
               </motion.button>
             ))}
           </div>
         </div>
 
-        {/* RIGHT: Display Area */}
-        <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-12 gap-12 order-1 lg:order-2 lg:sticky lg:top-10 h-fit">
+        {/* RIGHT/BOTTOM: Display Area */}
+        {/* Mobile: order-2, Desktop: order-2 */}
+        <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 order-2 lg:sticky lg:top-10 h-fit">
           
           {/* Slider Box */}
           <div className="md:col-span-8 group relative h-fit">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCase}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.5 }}
-                className="border border-white/10 p-2 bg-white/5 shadow-2xl"
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.4 }}
+                className="border border-slate-200 p-2 bg-slate-50 shadow-xl"
               >
-                {/* Thêm key để React tái cấu trúc slider khi đổi case, tránh xung đột thuộc tính nội bộ */}
                 <ReactCompareSlider
-                  key={`slider-${activeCase}`}
-                  itemOne={<ReactCompareSliderImage src={cases[activeCase].before} alt="Trước" className="grayscale opacity-60" />}
+                  itemOne={<ReactCompareSliderImage src={cases[activeCase].before} alt="Trước" className="grayscale opacity-80" />}
                   itemTwo={<ReactCompareSliderImage src={cases[activeCase].after} alt="Sau" />}
-                  className="h-[400px] md:h-[550px] object-cover"
+                  className="h-[350px] md:h-[550px] object-cover"
                 />
               </motion.div>
             </AnimatePresence>
             
-            <div className="absolute bottom-6 left-6 flex gap-3 pointer-events-none z-10">
-               <span className="px-3 py-1 bg-black/50 text-[9px] uppercase tracking-widest backdrop-blur-md border border-white/10">Hiện trạng cũ</span>
-               <span className="px-3 py-1 bg-blue-600/50 text-[9px] uppercase tracking-widest backdrop-blur-md border border-white/10">Sau cải tạo</span>
+            <div className="absolute bottom-6 left-6 flex gap-2 pointer-events-none z-10">
+               <span className="px-3 py-1 bg-white/90 text-[8px] md:text-[9px] uppercase tracking-widest backdrop-blur-sm border border-slate-200 text-slate-600 shadow-sm">Hiện trạng</span>
+               <span className="px-3 py-1 bg-blue-600 text-white text-[8px] md:text-[9px] uppercase tracking-widest shadow-lg">Sau cải tạo</span>
             </div>
           </div>
 
@@ -189,18 +153,23 @@ export default function CaseStudies() {
                   transition={{ duration: 0.3 }}
                   className="space-y-6"
                 >
-                  <p className="text-blue-400 text-[10px] uppercase tracking-[0.2em] font-bold">
-                    {cases[activeCase].location}
-                  </p>
-                  <p className="text-sm text-gray-400 font-light leading-relaxed italic border-l border-blue-500/30 pl-4">
-                    "{cases[activeCase].desc}"
-                  </p>
+                  <div>
+                    <p className="text-blue-600 text-[10px] uppercase tracking-[0.2em] font-bold mb-2">
+                      {cases[activeCase].location}
+                    </p>
+                    <h3 className="text-2xl font-bold text-[#0F1A41] uppercase tracking-tighter md:hidden mb-4">
+                      {cases[activeCase].name}
+                    </h3>
+                    <p className="text-sm text-slate-500 font-light leading-relaxed italic border-l-2 border-blue-600/20 pl-4">
+                      "{cases[activeCase].desc}"
+                    </p>
+                  </div>
 
-                  <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
+                  <div className="grid grid-cols-2 gap-4 pt-6 border-t border-slate-100">
                     {cases[activeCase].stats.map((s, i) => (
                       <div key={i}>
-                        <p className="text-[8px] uppercase tracking-widest text-gray-500 mb-1">{s.label}</p>
-                        <p className="text-2xl font-light text-blue-400 tracking-tighter">{s.value}</p>
+                        <p className="text-[8px] uppercase tracking-widest text-slate-400 mb-1 font-semibold">{s.label}</p>
+                        <p className="text-2xl font-light text-[#0F1A41] tracking-tighter">{s.value}</p>
                       </div>
                     ))}
                   </div>
@@ -209,12 +178,12 @@ export default function CaseStudies() {
             </div>
 
             <motion.button 
-              whileHover={{ x: 10 }}
+              whileHover={{ x: 8 }}
               className="mt-12 flex items-center gap-4 group w-fit"
             >
-              <div className="h-[1px] w-8 bg-white group-hover:w-16 transition-all duration-500"></div>
-              <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-white/60 group-hover:text-white">
-                Hồ sơ chi tiết
+              <div className="h-[1px] w-8 bg-blue-600 group-hover:w-12 transition-all duration-500"></div>
+              <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-slate-400 group-hover:text-blue-600 transition-colors">
+                Xem chi tiết hồ sơ
               </span>
             </motion.button>
           </div>

@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 
 export default function MarketInsights() {
- return (
+  return (
     <section className="relative min-h-screen w-full bg-[#F4F4F4] text-[#0F1A41] py-24 px-6 md:px-16 overflow-hidden">
-      
+
       {/* Decorative Grid - Hệ lưới kỹ thuật bản Light */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="w-full h-full grid grid-cols-4 md:grid-cols-12 border-l border-[#0F1A41]/[0.03]">
@@ -20,28 +20,28 @@ export default function MarketInsights() {
           <div className="md:col-span-8">
             <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-blue-600 mb-4 block">Phân tích chiến lược</span>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.85]">
-              Thấu hiểu <br />
-              <span className="font-light italic opacity-60">Thị trường.</span>
+              RỦI RO  <br />
+              <span className="font-light italic opacity-60">ĐẦU TƯ</span>
             </h2>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-0 border-t border-[#0F1A41]/10 pt-16">
-          
+
           {/* CỘT TRÁI: THÁCH THỨC - Cảm giác tĩnh và sâu sắc */}
           <div className="md:col-span-5 flex flex-col gap-12 md:pr-12">
             <div className="flex items-center gap-4">
               <div className="w-2 h-2 bg-red-500"></div>
-              <span className="text-xs font-bold uppercase tracking-widest opacity-40">Thực trạng hiện hữu</span>
+              <span className="text-xs font-bold uppercase tracking-widest opacity-40">Thực trạng thị trường</span>
             </div>
 
             <div className="space-y-12">
               {[
-                { title: "Sai lệch định vị chiến lược", desc: "Lựa chọn phân khúc không tương thích với tọa độ vị trí và đặc thù dân cư sẽ triệt tiêu khả năng cạnh tranh ngay từ giai đoạn đầu." },
-                { title: "Rủi ro thâm hụt vốn đầu tư", desc: "Các biến số phát sinh trong thực tế thường gây thâm hụt 15-30% ngân sách dự kiến, làm kéo dài thời gian hoàn vốn (ROI)." },
-                { title: "Biến số lợi nhuận dài hạn", desc: "Vận hành thiếu lộ trình khiến dòng tiền không ổn định, tài sản nhanh chóng xuống cấp và mất dần vị thế trên thị trường." }
+                { title: "Định vị sai sản phẩm", desc: "Lựa chọn phân khúc không tương thích với vị trí và nhu cầu của khách hàng mục tiêu sẽ triệt tiêu khả năng cạnh tranh của tòa nhà." },
+                { title: "Phát sinh tăng vốn đầu tư", desc: "Các biến số phát sinh trong thực tế thường gây phát sinh 15-30% ngân sách dự kiến, làm kéo dài thời gian hoàn vốn (ROI)." },
+                { title: "Lợi nhuận dài hạn không bền vững", desc: "Marketing và Vận hành không tối ưu khiến dòng tiền không ổn định, tài sảntốn chi phí bảo trì hoặc nhanh chóng xuống cấp và mất dần vị thế trên thị trường." }
               ].map((item, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -64,28 +64,28 @@ export default function MarketInsights() {
           <div className="md:col-span-6 flex flex-col gap-12">
             <div className="flex items-center gap-4">
               <div className="w-2 h-2 bg-emerald-500"></div>
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Giải pháp từ CityHouse More</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Giải pháp từ cityhouse</span>
             </div>
 
             <div className="grid grid-cols-1 gap-4">
               {[
-                { 
-                  num: "01", 
-                  title: "Quản lý gia sản", 
-                  desc: "Tài sản được nhìn dưới góc độ Gia sản lâu dài qua nhiều thế hệ, không vì thương mại thuần túy" 
+                {
+                  num: "01",
+                  title: "Khác biệt hóa",
+                  desc: "Nghiên cứu và định hình giá trị độc đáo và bền vững cho dự án"
                 },
-                { 
-                  num: "02", 
-                  title: "Tối ưu giá trị kép", 
-                  desc: "Tối ưu song song cả Dòng tiền thu nhập và Giá trị bất động sản" 
+                {
+                  num: "02",
+                  title: "Tối ưu giá trị kép",
+                  desc: "Tối ưu song song cả Dòng tiền thu nhập và Giá trị bất động sản"
                 },
-                { 
-                  num: "03", 
-                  title: "Khác biệt hóa", 
-                  desc: "Nghiên cứu và định hình giá trị độc đáo và bền vững cho dự án" 
+                {
+                  num: "03",
+                  title: "Quản lý gia sản",
+                  desc: "Tài sản được nhìn dưới góc độ Gia sản lâu dài qua nhiều thế hệ, không vì thương mại thuần túy"
                 }
               ].map((item, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   whileHover={{ x: 10, backgroundColor: "#0F1A41", color: "#FFFFFF" }}
                   className="p-8 border border-[#0F1A41]/10 flex flex-col gap-4 transition-all duration-500 group cursor-pointer bg-white/50 backdrop-blur-sm"
