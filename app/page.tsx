@@ -9,6 +9,7 @@ import PartnerProcess from "./components/tuvan/PartnerProcess";
 import FooterContact from "./components/tuvan/FooterContact";
 import StrategicRoadmap from "./components/tuvan/StrategicRoadmap";
 import ContactSection from "./components/tuvan/ContactSection";
+import PortfolioSection from "./components/tuvan/PortfolioSection";
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <BrandShowcase />
       <StrategicRoadmap />
       <ContactSection />
+      <PortfolioSection />
       {/* <OperationTech /> */}
       {/* <PartnerProcess /> */}
       {/* <FooterContact /> */}
