@@ -6,10 +6,10 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 const cases = [
   {
     id: "01",
-    name: "Cityhouse Kim Nguyên",
+    name: "Cityhouse - Kim Nguyên",
     location: "Phú Nhuận, TP. HCM",
     stats: [
-      { label: "Diện tích sàn", value: "2500 m²" },
+      { label: "Diện tích sàn", value: "2.500 m²" },
       { label: "Số phòng", value: "54 phòng" }
     ],
     before: "/images/bellita.png",
@@ -18,10 +18,10 @@ const cases = [
   },
   {
     id: "02",
-    name: "CityHouse CityOasis",
+    name: "CityHouse - CityOasis",
     location: "Quận 3, TP. HCM",
     stats: [
-      { label: "Diện tích sàn", value: "1200 m²" },
+      { label: "Diện tích sàn", value: "1.200 m²" },
       { label: "Số phòng", value: "27 phòng" }
     ],
     before: "https://images.unsplash.com/photo-1512918766671-ed6a07be061f?q=80&w=2070",
@@ -30,10 +30,10 @@ const cases = [
   },
   {
     id: "03",
-    name: "CityHouse Atelier",
+    name: "CityHouse -  Atelier",
     location: "Quận 2, TP. HCM",
     stats: [
-      { label: "Diện tích sàn", value: "3200 m²" },
+      { label: "Diện tích sàn", value: "3.200 m²" },
       { label: "Số phòng", value: "45 phòng" }
     ],
     before: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000",
@@ -42,10 +42,10 @@ const cases = [
   },
   {
     id: "04",
-    name: "CityHouse Elpino",
+    name: "CityHouse - Elpino",
     location: "Quận 1, TP. HCM",
     stats: [
-      { label: "Diện tích sàn", value: "1800 m²" },
+      { label: "Diện tích sàn", value: "1.800 m²" },
       { label: "Số phòng", value: "37 phòng" }
     ],
     before: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000",
@@ -69,8 +69,8 @@ export default function CaseStudies() {
       <div className="container mx-auto mb-12 md:mb-20">
         <div className="grid grid-cols-1 md:grid-cols-12 items-end gap-8">
           <div className="md:col-span-8">
-            <span className="text-[10px] tracking-[0.5em] uppercase text-blue-600 font-bold mb-4 block">Portfolios</span>
-            <h2 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter leading-none text-[#0F1A41]">
+            <span className="text-[10px] tracking-[0.5em] uppercase text-blue-600 font-bold mb-4 block">Dự án đã thực hiện</span>
+            <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none text-[#0F1A41]">
               Sự chuyển hóa <br /> <span className="font-light italic opacity-30">Giá trị.</span>
             </h2>
           </div>
@@ -83,7 +83,7 @@ export default function CaseStudies() {
         {/* Mobile: order-1 (dưới title), Desktop: order-1 (bên trái) */}
         <div className="lg:col-span-3 order-1">
           <p className="text-[10px] tracking-widest uppercase opacity-60 mb-6 font-bold text-blue-600">
-            Danh sách dự án ({cases.length})
+            Dự án tiêu biểu ({cases.length})
           </p>
           
           <div className="no-scrollbar overflow-x-auto lg:overflow-y-auto flex lg:flex-col gap-4 max-h-none lg:max-h-[600px] pr-2 pb-4 lg:pb-0">
@@ -182,9 +182,9 @@ export default function CaseStudies() {
               className="mt-12 flex items-center gap-4 group w-fit"
             >
               <div className="h-[1px] w-8 bg-blue-600 group-hover:w-12 transition-all duration-500"></div>
-              <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-slate-400 group-hover:text-blue-600 transition-colors">
+              {/* <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-slate-400 group-hover:text-blue-600 transition-colors">
                 Xem chi tiết hồ sơ
-              </span>
+              </span> */}
             </motion.button>
           </div>
         </div>

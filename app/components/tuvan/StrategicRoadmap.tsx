@@ -6,25 +6,25 @@ const steps = [
     id: "01",
     title: "Khảo sát Bất động sản",
     desc: "Đánh giá chi tiết về vị trí, quy mô và phân tích tiềm năng khai thác thực tế của tài sản.",
-    tag: "Survey & Analysis"
+    tag: ""
   },
   {
     id: "02",
-    title: "Xác định mô hình",
+    title: "XÁC ĐỊNH MÔ HÌNH PHÙ HỢP NHẤT",
     desc: "Đề xuất phân khúc sản phẩm phù hợp, đảm bảo tính bền vững và lợi nhuận tối ưu.",
-    tag: "Strategy"
+    tag: ""
   },
   {
     id: "03",
     title: "Triển khai vận hành",
     desc: "Giám sát quá trình bàn giao, thiết lập bộ máy nhân sự và quy trình vận hành chuyên nghiệp.",
-    tag: "Operation"
+    tag: ""
   },
   {
     id: "04",
     title: "Tối ưu dòng tiền",
     desc: "Liên tục tinh chỉnh quy trình và dịch vụ để gia tăng hiệu quả kinh doanh thực tế.",
-    tag: "Optimization"
+    tag: ""
   }
 ];
 
@@ -45,7 +45,7 @@ export default function StrategicRoadmap() {
         {/* Header */}
         <div className="mb-20">
           <span className="text-[10px] tracking-[0.5em] uppercase text-blue-600 font-bold mb-4 block">
-            Strategic Roadmap
+            KẾ HOẠCH THỰC HIỆN 
           </span>
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-none">
             Qui trình <br /> <span className="font-light italic opacity-30">Kiến tạo giá trị.</span>

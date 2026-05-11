@@ -18,7 +18,7 @@ export default function Hero() {
             <div className="z-10 flex justify-between items-start">
                 <div className="flex flex-col gap-1">
                     {/* <span className="text-[10px] tracking-[0.4em] uppercase font-light text-blue-400">Dịch vụ tư vấn chiến lược</span> */}
-                    <span className="text-[9px] tracking-[0.2em] uppercase opacity-40">CityHouse More / Asset Management</span>
+                    <span className="text-[9px] tracking-[0.2em] uppercase opacity-40"></span>
                 </div>
                 <div className="hidden md:block text-right">
                     {/* <span className="text-[9px] tracking-[0.3em] uppercase opacity-40 leading-loose">
@@ -41,15 +41,15 @@ export default function Hero() {
                         </h1>
                     </motion.div>
 
-<div className="flex flex-col gap-8 border-l border-blue-500/30 pl-8 max-w-md">
+                    <div className="flex flex-col gap-8 border-l border-blue-500/30 pl-8 max-w-md">
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.8 }}
                             className="text-xs md:text-sm text-gray-300 leading-relaxed tracking-wide"
                         >
-                            Nền tảng quản lý bất động sản dòng tiền 
-                                 Căn hộ - Khách sạn - Văn phòng - Resort.
+                            Nền tảng quản lý bất động sản dòng tiền
+                            Căn hộ - Khách sạn - Văn phòng - Resort.
 
                         </motion.p>
 
@@ -61,14 +61,14 @@ export default function Hero() {
                             <div className="h-[1px] w-12 bg-blue-500 group-hover:w-24 transition-all duration-500"></div>
                         </motion.button>
                     </div>
-                    
-                    
+
+
                 </div>
 
             </div>
 
             {/* Background Graphic - Khối kiến trúc chìm */}
-            <div className="absolute right-[-5%] top-[10%] w-[50%] h-[80%] opacity-90  pointer-events-none z-0">
+            <div className="absolute right-[-5%] top-[10%] w-[65%] h-[80%] opacity-90  pointer-events-none z-0">
                 <video
                     src="/videos/video-intro.mp4"
                     autoPlay
@@ -93,7 +93,7 @@ export default function Hero() {
                     <p className="text-[9px] uppercase tracking-[0.2em] text-gray-500 mb-2 font-medium">Tài Sản Đang Quản</p>
                     <p className="text-3xl font-light tracking-tighter">3.300<span className="text-sm ml-1">+ tỷ</span></p>
                 </div>
-                
+
             </div>
         </section>
     );
